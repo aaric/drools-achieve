@@ -6,15 +6,16 @@ plugins {
 }
 
 group = "com.sample"
-version = "0.1.0-SNAPSHOT"
+version = "0.2.0-SNAPSHOT"
 
 ext {
     knife4jVersion = "3.0.3"
+    droolsVersion="7.63.0.Final"
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 repositories {
@@ -24,10 +25,12 @@ repositories {
 
 dependencies {
     implementation "org.slf4j:slf4j-api"
-    implementation "org.slf4j:slf4j-simple"
 
-    dependencies {
-        testImplementation("org.junit.jupiter:junit-jupiter")
+    implementation "org.drools:drools-compiler"
+    implementation "org.drools:drools-mvel"
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+        exclude group: "org.junit.vintage", module: "junit-vintage-engine"
     }
 }
 
@@ -47,6 +50,9 @@ dependencyManagement {
         dependency "org.apache.commons:commons-collections4:4.4"
 
         dependency "io.swagger:swagger-annotations:1.5.22"
+
+        dependency "org.drools:drools-compiler:$droolsVersion"
+        dependency "org.drools:drools-mvel:$droolsVersion"
     }
 }
 
@@ -62,6 +68,10 @@ compileTestJava {
 
 test {
     useJUnitPlatform()
+}
+
+bootJar {
+    enabled false
 }
 
 task checkstyle(type: Checkstyle) {
