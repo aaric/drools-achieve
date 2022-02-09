@@ -8,7 +8,7 @@ rule "score1"
     then
         $order.setScore(0);
         System.out.println("default 0");
-    end
+end
 
 rule "score2"
     when
@@ -16,7 +16,7 @@ rule "score2"
     then
         $order.setScore(100);
         System.out.println("add 100");
-    end
+end
 
 rule "score3"
     when
@@ -24,7 +24,7 @@ rule "score3"
     then
         $order.setScore(500);
         System.out.println("add 500");
-    end
+end
 
 rule "score5"
     when
@@ -32,4 +32,4 @@ rule "score5"
     then
         $order.setScore(1000);
         System.out.println("add 1000");
-    end
+end
