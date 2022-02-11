@@ -8,3 +8,19 @@
 [![release](https://img.shields.io/badge/release-0.2.0-blue.svg)](https://github.com/aaric/drools-achieve/releases)
 
 > [Drools Learning.](https://docs.drools.org/7.64.0.Final/drools-docs/html_single/index.html)
+
+## 概念
+
+|No.|Name| Remark   |
+|:---:|:---:|----------|
+|1|Working Memory|*工作内存*|
+|2|Fact|*事实，即普通JavaBean写到Working Memory后的对象*|
+|3|Rule Base|*规则库*|
+|4|Pattern Matcher|*匹配器*|
+|5|Agenda|*议程*|
+|6|Execution Engine|*执行引擎*|
+
+
+## 工作流程
+
+![workflow](workflow.jpg)
