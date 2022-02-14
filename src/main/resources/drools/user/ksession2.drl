@@ -32,3 +32,17 @@ rule "customer4"
     then
         System.err.println("customer4: name not matches \"张.*\"");
 end
+
+rule "customer5"
+    when
+        eval(true);
+    then
+        Customer customerRule = new Customer();
+        customerRule.setName("张三");
+        insert(customerRule);
+        System.err.println("customer5: insert new customer");
+end
+
+// other when syntax:
+// - memberOf
+// - not memberOf

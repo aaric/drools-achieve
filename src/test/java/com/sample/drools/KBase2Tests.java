@@ -27,7 +27,7 @@ public class KBase2Tests {
 
         Order order = new Order();
         Customer customer = new Customer();
-        customer.setName("张三");
+        customer.setName("李四");
         customer.setOrderList(Arrays.asList(order));
         session.insert(order);
         session.insert(customer);
