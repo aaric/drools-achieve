@@ -34,6 +34,7 @@ rule "customer4"
 end
 
 rule "customer5"
+    no-loop true
     when
         eval(true);
     then
