@@ -1,5 +1,8 @@
 <kmodule xmlns="http://www.drools.org/xsd/kmodule">
-    <kbase name="kbase1" packages="drools.order" default="true">
-        <ksession name="ksession1" default="true"/>
+    <kbase name="kbase1" packages="drools.order">
+        <ksession name="ksession1"/>
+    </kbase>
+    <kbase name="kbase2" packages="drools.user" default="true">
+        <ksession name="ksession2" default="true"/>
     </kbase>
 </kmodule>

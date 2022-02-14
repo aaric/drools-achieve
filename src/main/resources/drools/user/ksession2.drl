@@ -1,0 +1,34 @@
+package drools.user;
+
+import com.sample.drools.pojo.Order;
+import com.sample.drools.pojo.Customer;
+
+rule "customer1"
+    when
+        $order: Order();
+        $customer: Customer(orderList contains $order);
+    then
+        System.err.println("customer1: orderList contains $order");
+end
+
+rule "customer2"
+    when
+        $order: Order();
+        $customer: Customer(orderList not contains $order);
+    then
+        System.err.println("customer2: orderList not contains $order");
+end
+
+rule "customer3"
+    when
+        $customer: Customer(name matches "张.*");
+    then
+        System.err.println("customer3: name matches \"张.*\"");
+end
+
+rule "customer4"
+    when
+        $customer: Customer(name not matches "张.*");
+    then
+        System.err.println("customer4: name not matches \"张.*\"");
+end
