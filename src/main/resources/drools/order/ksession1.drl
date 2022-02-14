@@ -7,7 +7,7 @@ rule "score1"
         $order: Order(amount<100)
     then
         $order.setScore(0);
-        System.out.println("default 0");
+        System.err.println("score1: default 0");
 end
 
 rule "score2"
@@ -15,7 +15,7 @@ rule "score2"
         $order: Order(amount>=100 && amount<500)
     then
         $order.setScore(100);
-        System.out.println("add 100");
+        System.err.println("score2: add 100");
 end
 
 rule "score3"
@@ -23,13 +23,13 @@ rule "score3"
         $order: Order(amount>500 && amount<=1000)
     then
         $order.setScore(500);
-        System.out.println("add 500");
+        System.err.println("score3: add 500");
 end
 
-rule "score5"
+rule "score4"
     when
         $order: Order(amount>1000)
     then
         $order.setScore(1000);
-        System.out.println("add 1000");
+        System.err.println("score4: add 1000");
 end
