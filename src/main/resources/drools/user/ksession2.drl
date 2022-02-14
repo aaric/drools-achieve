@@ -33,17 +33,47 @@ rule "customer4"
         System.err.println("customer4: name not matches \"张.*\"");
 end
 
+// other when syntax:
+// - memberOf
+// - not memberOf
+
 rule "customer5"
-    no-loop true
     when
         eval(true);
     then
         Customer customerRule = new Customer();
         customerRule.setName("张三");
         insert(customerRule);
-        System.err.println("customer5: insert new customer");
+        System.err.println("customer5: insert customer \"张三\"");
 end
 
-// other when syntax:
-// - memberOf
-// - not memberOf
+rule "customer6"
+    no-loop true
+    when
+        $customer: Customer(name == "李四");
+    then
+        $customer.setName("张三");
+        update($customer)
+        System.err.println("customer6: update customer \"李四\"");
+end
+
+rule "customer7"
+    salience 1
+    when
+        $customer: Customer(name == "李四");
+    then
+        retract($customer)
+        System.err.println("customer7: remove customer \"李四\"");
+end
+
+// props syntax:
+// - salience (default 0)
+// - no-loop
+// - date-effective
+// - date-expires
+// - enabled
+// - dialect
+// - activation-group
+// - agenda-group
+// - auto-facus
+// - timer
