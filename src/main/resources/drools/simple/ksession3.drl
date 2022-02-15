@@ -1,0 +1,7 @@
+rule "simple1"
+    date-effective "2022-02-15"
+    when
+        eval(true);
+    then
+        System.err.println("simple1: date-effective syntax");
+end
