@@ -39,3 +39,19 @@ rule "simple5"
     then
         System.err.println("simple5: agenda-2");
 end
+
+rule "simple6"
+    timer (5s 2s)
+    when
+        eval(true);
+    then
+        System.err.println("simple6: timer-1");
+end
+
+rule "simple7"
+    timer (cron:0/1 * * * * ?)
+    when
+        eval(true);
+    then
+        System.err.println("simple7: timer-2");
+end

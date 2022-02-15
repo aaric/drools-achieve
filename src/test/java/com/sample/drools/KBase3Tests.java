@@ -6,6 +6,8 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * KBase3Tests
  *
@@ -20,7 +22,7 @@ public class KBase3Tests {
     }
 
     @Test
-    public void testRule() {
+    public void testRule15() {
         KieServices services = KieServices.Factory.get();
         KieContainer container = services.getKieClasspathContainer();
         KieSession session = container.newKieSession();
@@ -32,5 +34,22 @@ public class KBase3Tests {
         session.dispose();
 
         log.info("fire {} rules", count);
+    }
+
+    @Test
+    public void testRule67() throws InterruptedException {
+        KieServices services = KieServices.Factory.get();
+        KieContainer container = services.getKieClasspathContainer();
+        KieSession session = container.newKieSession();
+
+        new Thread(() -> {
+            session.fireUntilHalt();
+        }).start();
+
+        TimeUnit.SECONDS.sleep(20);
+
+        session.halt();
+
+        session.dispose();
     }
 }
