@@ -33,6 +33,7 @@ end
 
 rule "simple5"
     agenda-group "agenda"
+    auto-focus true
     when
         eval(true);
     then
