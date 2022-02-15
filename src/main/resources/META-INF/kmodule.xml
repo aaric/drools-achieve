@@ -2,7 +2,10 @@
     <kbase name="kbase1" packages="drools.order">
         <ksession name="ksession1"/>
     </kbase>
-    <kbase name="kbase2" packages="drools.user" default="true">
-        <ksession name="ksession2" default="true"/>
+    <kbase name="kbase2" packages="drools.user">
+        <ksession name="ksession2"/>
+    </kbase>
+    <kbase name="kbase3" packages="drools.simple" default="true">
+        <ksession name="ksession3" default="true"/>
     </kbase>
 </kmodule>

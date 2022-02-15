@@ -1,0 +1,57 @@
+rule "simple1"
+    date-effective "2022-02-15"
+    when
+        eval(true);
+    then
+        System.err.println("simple1: date-effective syntax");
+end
+
+rule "simple2"
+    activation-group "active"
+    when
+        eval(true);
+    then
+        System.err.println("simple2: active-1");
+end
+
+rule "simple3"
+    salience 1
+    activation-group "active"
+    when
+        eval(true);
+    then
+        System.err.println("simple3: active-2");
+end
+
+rule "simple4"
+    agenda-group "agenda"
+    when
+        eval(true);
+    then
+        System.err.println("simple4: agenda-1");
+end
+
+rule "simple5"
+    agenda-group "agenda"
+    auto-focus true
+    when
+        eval(true);
+    then
+        System.err.println("simple5: agenda-2");
+end
+
+rule "simple6"
+    timer (5s 2s)
+    when
+        eval(true);
+    then
+        System.err.println("simple6: timer-1");
+end
+
+rule "simple7"
+    timer (cron:0/1 * * * * ?)
+    when
+        eval(true);
+    then
+        System.err.println("simple7: timer-2");
+end
