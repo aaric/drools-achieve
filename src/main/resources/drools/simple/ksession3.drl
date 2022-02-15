@@ -5,3 +5,20 @@ rule "simple1"
     then
         System.err.println("simple1: date-effective syntax");
 end
+
+rule "simple2"
+    activation-group "active"
+    when
+        eval(true);
+    then
+        System.err.println("simple2: active-1");
+end
+
+rule "simple3"
+    salience 1
+    activation-group "active"
+    when
+        eval(true);
+    then
+        System.err.println("simple3: active-2");
+end
