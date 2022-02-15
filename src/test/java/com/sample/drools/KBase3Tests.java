@@ -25,6 +25,9 @@ public class KBase3Tests {
         KieContainer container = services.getKieClasspathContainer();
         KieSession session = container.newKieSession();
 
+        // agenda-group "agenda"
+        session.getAgenda().getAgendaGroup("agenda").setFocus();
+
         int count = session.fireAllRules();
         session.dispose();
 

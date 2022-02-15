@@ -22,3 +22,19 @@ rule "simple3"
     then
         System.err.println("simple3: active-2");
 end
+
+rule "simple4"
+    agenda-group "agenda"
+    when
+        eval(true);
+    then
+        System.err.println("simple4: agenda-1");
+end
+
+rule "simple5"
+    agenda-group "agenda"
+    when
+        eval(true);
+    then
+        System.err.println("simple5: agenda-2");
+end
