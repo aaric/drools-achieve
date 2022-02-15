@@ -52,5 +52,5 @@
 - dialect
 - activation-group
 - agenda-group
-- auto-facus
+- auto-focus
 - timer
