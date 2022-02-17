@@ -6,6 +6,9 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * KBase5Tests
  *
@@ -20,6 +23,9 @@ public class KBase5Tests {
         KieServices services = KieServices.Factory.get();
         KieContainer container = services.getKieClasspathContainer();
         KieSession session = container.newKieSession();
+
+        List<String> list = new ArrayList<>();
+        session.setGlobal("gList", list);
 
         int count = session.fireAllRules();
         session.dispose();

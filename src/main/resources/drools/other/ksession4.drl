@@ -1,13 +1,13 @@
 package drools.other;
 
-// global java.util.List gList;
+global java.util.List gList;
 
 rule "other1"
     when
         eval(true);
     then
-        // gList.add("hello world");
-        System.err.println("other1: hello world");
+        gList.add("hello world");
+        System.err.println("other1: global syntax");
 end
 
 // advanced syntax:
