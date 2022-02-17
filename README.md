@@ -53,3 +53,12 @@
 - agenda-group
 - auto-focus (default false)
 - timer
+
+### 3.4 Advanced
+
+- package
+- import
+- global
+- query
+- function
+- rule end
