@@ -1,5 +1,7 @@
 package drools.other;
 
+import com.sample.drools.pojo.Person;
+
 global java.util.List gList;
 
 rule "other1"
@@ -8,6 +10,14 @@ rule "other1"
     then
         gList.add("hello world");
         System.err.println("other1: global syntax");
+end
+
+query "query1"
+    $person: Person(age >= 30)
+end
+
+query "query2" (String nameParam)
+    $person: Person(age >= 30, name == nameParam)
 end
 
 // advanced syntax:
