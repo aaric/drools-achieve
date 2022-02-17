@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * KBase5Tests
+ * KBase4Tests
  *
  * @author Aaric, created on 2022-02-17T10:03.
  * @version 0.5.0-SNAPSHOT
  */
 @Slf4j
-public class KBase5Tests {
+public class KBase4Tests {
 
     @Test
     public void testRule() {
