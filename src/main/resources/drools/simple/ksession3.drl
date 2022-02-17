@@ -1,3 +1,5 @@
+package drools.simple;
+
 rule "simple1"
     date-effective "2022-02-15"
     when

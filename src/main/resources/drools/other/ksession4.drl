@@ -1,0 +1,41 @@
+package drools.other;
+
+import com.sample.drools.pojo.Person;
+
+global java.util.List gList;
+
+rule "other1"
+    when
+        eval(true);
+    then
+        gList.add("hello world");
+        System.err.println("other1: global syntax");
+end
+
+query "query1"
+    $person: Person(age >= 30)
+end
+
+query "query2" (String nameParam)
+    $person: Person(age >= 30, name == nameParam)
+end
+
+function String format(String name) {
+    return "hello " + name;
+}
+
+rule "other2"
+    when
+        $person: Person(age >= 30 && null != name)
+    then
+        String helloname = format($person.getName());
+        System.err.println("other2: format " + helloname);
+end
+
+// advanced syntax:
+// - package
+// - import
+// - global
+// - query
+// - function
+// - rule end
