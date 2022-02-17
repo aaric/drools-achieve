@@ -20,6 +20,18 @@ query "query2" (String nameParam)
     $person: Person(age >= 30, name == nameParam)
 end
 
+function String format(String name) {
+    return "hello " + name;
+}
+
+rule "other2"
+    when
+        $person: Person(age >= 30 && null != name)
+    then
+        String helloname = format($person.getName());
+        System.err.println("other2: format " + helloname);
+end
+
 // advanced syntax:
 // - package
 // - import
