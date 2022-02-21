@@ -10,7 +10,7 @@ version = "0.6.0-SNAPSHOT"
 
 ext {
     knife4jVersion = "3.0.3"
-    droolsVersion="7.63.0.Final"
+    kieVersion="7.65.0.Final"
 }
 
 java {
@@ -26,8 +26,8 @@ repositories {
 dependencies {
     implementation "org.slf4j:slf4j-api"
 
-    implementation "org.drools:drools-compiler"
-    implementation "org.drools:drools-mvel"
+    implementation "org.kie:kie-spring"
+    implementation "org.drools:drools-templates"
 
     implementation("org.springframework.boot:spring-boot-starter-web") {
         exclude group: "org.springframework.boot", module: "spring-boot-starter-tomcat"
@@ -59,8 +59,8 @@ dependencyManagement {
 
         dependency "io.swagger:swagger-annotations:1.5.22"
 
-        dependency "org.drools:drools-compiler:$droolsVersion"
-        dependency "org.drools:drools-mvel:$droolsVersion"
+        dependency "org.kie:kie-spring:$kieVersion"
+        dependency "org.drools:drools-templates:$kieVersion"
     }
 }
 
