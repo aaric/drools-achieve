@@ -5,7 +5,7 @@
 [![JUnit](https://img.shields.io/badge/JUnit-5.6.3-success.svg?style=flat&logo=junit5)](https://junit.org/junit5/docs/current/user-guide)
 [![Gradle](https://img.shields.io/badge/Gradle-7.2-success.svg?style=flat&logo=gradle)](https://docs.gradle.org/7.2/userguide/installation.html)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-2.3.12.RELEASE-success.svg?style=flat&logo=springboot)](https://docs.spring.io/spring-boot/docs/2.3.12.RELEASE/reference/htmlsingle/)
-[![Release](https://img.shields.io/badge/Release-0.5.0-informational.svg)](https://github.com/aaric/drools-achieve/releases)
+[![Release](https://img.shields.io/badge/Release-0.6.0-informational.svg)](https://github.com/aaric/drools-achieve/releases)
 
 > [Drools Learning.](https://docs.drools.org/7.64.0.Final/drools-docs/html_single/index.html)
 
