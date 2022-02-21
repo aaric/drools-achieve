@@ -6,6 +6,7 @@ import org.kie.api.KieBase;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -22,10 +23,10 @@ public class TestController {
     private KieBase kieBase;
 
     @GetMapping("/getScore")
-    public Integer getScore() {
+    public Integer getScore(@RequestParam Integer amount) {
         KieSession kieSession = kieBase.newKieSession();
 
-        Order order = new Order().setAmount(365);
+        Order order = new Order().setAmount(amount);
         kieSession.insert(order);
 
         int count = kieSession.fireAllRules();

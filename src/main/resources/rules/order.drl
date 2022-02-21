@@ -20,7 +20,7 @@ end
 
 rule "score3"
     when
-        $order: Order(amount>500 && amount<=1000)
+        $order: Order(amount>=500 && amount<1000)
     then
         $order.setScore(500);
         System.err.println("score3: add 500");
@@ -28,7 +28,7 @@ end
 
 rule "score4"
     when
-        $order: Order(amount>1000)
+        $order: Order(amount>=1000)
     then
         $order.setScore(1000);
         System.err.println("score4: add 1000");
