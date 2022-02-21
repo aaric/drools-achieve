@@ -1,0 +1,35 @@
+package drools.order;
+
+import com.sample.drools.pojo.Order;
+
+rule "score1"
+    when
+        $order: Order(amount<100)
+    then
+        $order.setScore(0);
+        System.err.println("score1: default 0");
+end
+
+rule "score2"
+    when
+        $order: Order(amount>=100 && amount<500)
+    then
+        $order.setScore(100);
+        System.err.println("score2: add 100");
+end
+
+rule "score3"
+    when
+        $order: Order(amount>500 && amount<=1000)
+    then
+        $order.setScore(500);
+        System.err.println("score3: add 500");
+end
+
+rule "score4"
+    when
+        $order: Order(amount>1000)
+    then
+        $order.setScore(1000);
+        System.err.println("score4: add 1000");
+end

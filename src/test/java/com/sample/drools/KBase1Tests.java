@@ -23,7 +23,7 @@ public class KBase1Tests {
         KieSession session = container.newKieSession();
 
         Order order = new Order()
-                .setAmount(365);
+                .setAmount(1365);
         session.insert(order);
 
         int count = session.fireAllRules();
